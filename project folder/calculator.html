@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+    <label>First Number</label>
+    <input type="number" id="input1" required>
+
+    <br><br>
+    <label foe="operation">Operration:</label>
+    <select id="operation">
+        <option value="+">Addition (+)</option>
+        <option value="-">Subtraction (-)</option>
+        <option value="*">Multiplication (*)</option>
+        <option value="/">Division (/)</option>
+    </select>
+    <br><br>
+    <label>Second Number:</label>
+    <input type="number" id="input2" required>
+
+    <br><br>
+    <button onclick="submit()" id="submit">Calculate</button>
+
+    <script>
+         function submit() {
+            
+            let input1 = document.getElementById("input1").value;
+            let input2 = document.getElementById("input2").value;
+            let operation = document.getElementById("operation").value;
+         
+            let result;
+            if (operation == "+") {
+               result = parseInt(input1) + parseInt(input2);
+            }
+            if (operation == "-") {
+                result = parseInt(input1) - parseInt(input2);
+
+            }
+            if (operation == "*") {
+                result = parseInt(input1) * parseInt(input2);
+            }
+            if (operation == "/") {
+                result = parseInt(input1) / parseInt(input2);
+            }
+                alert(result);
+         
+        }
+            
+           
+        </script>
+    </body>
+</html>
