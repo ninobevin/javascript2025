@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+    <html>
+        <head>
+            <title>Sitame</title>
+            <link rel="stylesheet" href="./assets/styles/calc.css"/>
+
+            <style>
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 1.2em;
+}
+
+.form1{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 1.2em;
+    border: 2px solid black;
+    padding: 2em 1em;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgb(188, 198, 218);
+    
+}
+
+input, select{
+    all: unset;
+    background-color: rgb(224, 226, 230);
+    border-radius: 4px;
+    width: 50%;
+}
+
+.form2{
+    display: block;
+    justify-items: center;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1em;
+    border: 2px solid black;
+    padding: 2em 1em;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgb(224, 226, 230);
+}
+
+table{
+    all: unset;
+    padding: 4px;
+    background-color: rgb(172, 172, 172);
+    overflow: hidden;
+    border-radius: 6px;
+    height: 1em;
+}
+
+button{
+    margin-top: 1em;
+    padding: 6px 15%;
+    font-size: 1.2em;
+    background-color: rgb(222, 227, 238);
+    border-radius: 12px;
+    border: none;
+    color: black;
+}
+button:hover {
+    background-color: rgb(81, 121, 167);
+    transform: scale(99%);
+    color: white;
+    cursor: grab;
+}
+                
+            </style>
+
+
+        </head>
+
+        <body>
+
+            <!--FORM-->
+
+            <div class="form1">
+           <label for="num1">Input 1:</label><br>
+           <input type="number" id="input1" required>
+
+           <br><br>
+
+           <label for="operation">Operation:</label><br>
+           <select name="" id="operation">
+            <option value="invalid">Select</option>
+            <option value="+">Addition ( + )</option>
+            <option value="-">Subtraction ( - )</option>
+            <option value="x">Multiplication ( x )</option>
+            <option value="/">Division ( / )</option>
+           </select>
+
+           <br><br>
+
+           <label for="num2">Input 2:</label><br>
+           <input type="number" id="input2" required>
+
+           <br><br>
+
+           <button onclick="calc()" type="submit" id="submit">Calculate</button>
+
+           <br><br>
+
+           </div>
+
+
+
+           <div class="form2">
+
+            <h3>History</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Input 1</th>
+                        <th>Operation</th>
+                        <th>Input 2</th>
+                        <th>Answer</th>         
+                    </tr>
+                </thead>
+                <tbody id="history">
+
+                </tbody>
+            </table>
+
+
+           </div>
+
+
+           <footer>
+            <p><small>&copy; Jme 2025. All Rights Reserved. </small></p>
+           </footer>
+
+
+
+
+
+                <!--SCRIPT HERE!-->
+
+           <script>
+
+            let x = input1;
+            let y = input2;
+
+            
+
+                function calc(){
+
+                /* NUMBER 1 and 2 */
+
+                    
+                    let input1 = document.getElementById("input1").value;
+
+                    let input2 = document.getElementById("input2").value;
+
+                    let operation = document.getElementById("operation").value;
+
+
+
+                    let result;
+                    if (operation == "+") {
+                        result = parseInt(input1) + parseInt(input2);
+                    }                  
+                    
+                    if (operation == "-") {
+                        result = parseInt(input1) - parseInt(input2);
+                    }
+
+                    if (operation == "x") {
+                        result = parseInt(input1) * parseInt(input2);
+                    }  
+
+                    if (operation == "/") {
+                        result = parseInt(input1) / parseInt(input2);
+                    }
+
+                    if (operation == "invalid") {
+                        alert("Please select an operation.");
+                    } 
+
+                    alert(result); 
+                   
+                    addHistory(input1, operation, input2, result);
+            }
+
+            function addHistory(input1, operation, input2, result) {
+                // new row in the history table
+                let historyTable = document.getElementById("history");
+                let row = document.createElement("tr");
+
+                // add cells
+                let cell1 = document.createElement("td");
+                cell1.textContent = input1;
+                row.appendChild(cell1);
+
+                let cell2 = document.createElement("td");
+                cell2.textContent = operation;
+                row.appendChild(cell2);
+
+                let cell3 = document.createElement("td");
+                cell3.textContent = input2;
+                row.appendChild(cell3);
+
+                let cell4 = document.createElement("td");
+                cell4.textContent = result;
+                row.appendChild(cell4);
+
+                
+                historyTable.appendChild(row);
+
+            }
+                
+
+           </script>
+
+
+        </body>
+
+    </html>
