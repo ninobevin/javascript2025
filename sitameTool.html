@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+        <title>Distance Converter</title>
+        <link rel="stylesheet" href="./style.css">
+        <style>
+body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+.form1{
+    width: 50%; margin: 0 auto;
+    text-align: center; font-size: 1.2em;
+    border: 2px solid black; padding: 1em 1em;
+    border-radius: 4px; overflow: hidden; display: block;
+}
+button{width: 6em; height: 2em;}
+input{height: 2em; width: 8em;}
+        </style>
+        </head>
+        <body>
+            <div class="form1">
+                <h2>Distance Converter</h2>
+
+                <label>Meter to Kilometer</label><br>
+                <input id="txt_m_to_km" type="number" />
+                <button id="btn_m_to_km" onclick="metersToKm()">convert</button>
+                <br><br>
+
+                    <label>Inches to Centimeter</label><br>
+                    <input id="txt_in_to_cm" type="number" />
+                    <button id="btn_in_to_cm" onclick="inchesToCm()">convert</button>
+                    <br><br>
+
+                    <label>Inches to Feet</label><br>
+                    <input id="txt_in_to_ft" type="number" />
+                    <button id="btn_in_to_ft" onclick="inchesToFt()">convert</button>
+                    <br><br>
+
+                    <label>Inches to Meters</label><br>
+                    <input id="txt_in_to_m" type="number" />
+                    <button id="btn_in_to_m" onclick="inchesToM()">convert</button>
+                    <br><br>
+
+                    <label>Inches to Kilometer</label><br>
+                    <input id="txt_in_to_km" type="number" />
+                    <button id="btn_in_to_km" onclick="inchesToKm()">convert</button>
+            </div>
+
+            <footer>
+                <p><small>&copy; Jme 2025. All Rights Reserved. </small></p>
+            </footer>
+            
+                <!--YOR SCRIPTTT-->
+
+            <script>               
+                function metersToKm() {
+                    let meter = parseFloat(document.getElementById("txt_m_to_km").value) || 0;
+                    let kilometer = parseFloat(meter / 1000);
+                    alert(meter + "m is equal to " + kilometer + "km");       
+                }
+
+                function inchesToCm() {
+                    let inches = parseFloat(document.getElementById("txt_in_to_cm").value) || 0;
+                    let cm = parseFloat(inches * 2.54);
+                    alert(inches + "in is equal to " + cm + "cm");       
+                }
+
+                function inchesToFt() {
+                    let inches = parseFloat(document.getElementById("txt_in_to_ft").value) || 0;
+                    let feet = parseFloat(inches / 12);
+                    alert(inches + "in is equal to " + feet + "ft");       
+                }
+
+                function inchesToM() {
+                    let inches = parseFloat(document.getElementById("txt_in_to_m").value) || 0;
+                    let meters = parseFloat(inches * 0.0254);
+                    alert(inches + "in is equal to " + meters + "m");       
+                }
+
+                function inchesToKm() {
+                    let inches = parseFloat(document.getElementById("txt_in_to_km").value) || 0;
+                    let kilometer = parseFloat(inches * 0.0000254);
+                    alert(inches + "in is equal to " + kilometer + "km");       
+                }
+            </script>           
+        </body>
+    </html>
