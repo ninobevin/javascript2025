@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <h3>Distance Converter</h3>
+        </div>
+        <div>
+            <h4>Meter to Kilometer</h4>
+            <input id="txt_m_to_km" type="number" />
+            <button id="btn_m_to_km" onclick="metersToKm()">Convert</button>
+        </div>
+        <div>
+            <h4>Inches to Centimeter</h4>
+            <input id="txt_in_to_cm" type="number" />
+            <button id="btn_in_to_cm" onclick="inchesToCm()">Convert</button>
+        </div>
+        <div>
+            <h4>Inches to Feet</h4>
+            <input id="txt_in_to_ft" type="number" />
+            <button id="btn_in_to_ft" onclick="inchesToFt()">Convert</button>
+        </div>
+        <div>
+            <h4>Inches to Meter</h4>
+            <input id="txt_in_to_m" type="number" />
+            <button id="btn_in_to_m" onclick="inchesToM()">Convert</button>
+        </div>
+        <div>
+            <h4>Inches to Kilometer</h4>
+            <input id="txt_in_to_km" type="number" />
+            <button id="btn_in_to_km" onclick=" inchesToKm()">Converter</button>
+        </div>
+        
+        <script>
+            function metersToKm(){
+                let meter = document.getElementById("txt_m_to_km").value;
+                let kilometer=parseFloat(meter/1000);
+                alert(meter +"is equal to"+kilometer+"km");
+            }
+            function inchesToCm(){
+                let inches = document.getElementById("txt_in_to_cm").value;
+                let centimeter=parseFloat(inches*2.54);
+                alert(inches +"inches is equal to"+centimeter+"cm");
+            }
+            function inchesToFt(){
+                let inches = document.getElementById("txt_in_to_ft").value;
+                let feet=parseFloat(inches/12);
+                alert(inches +"inches is equal to"+feet+"ft");
+            }
+            function inchesToM(){
+                let inches = document.getElementById("txt_in_to_m").value;
+                let meter=parseFloat(inches/39.37);
+                alert(inches +"inches is equal to"+meter+"m");
+            }
+            function inchesToKm(){
+                let inches = document.getElementById("txt_in_to_km").value;
+                let kilometer=parseFloat(inches/1000);
+                alert(inches +"inches is equal to"+kilometer+"km");
+            }
+        </script>
+        
+    </body>
+    </html>
