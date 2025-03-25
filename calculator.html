@@ -1,57 +1,131 @@
 <!DOCTYPE html>
-<head></head>
-<h2>Simple Calculator</h2>
-<body>
-    <div>
-        <label for="num1">First Number</label>
-        <input type="number" id="input1" required>
-        <br><br>
+<html lang="en">
 
-        <label for="operation">Operation:</label>
-        <select id="operation">
-            <option value="+">Addition (+)</option>
-            <option value="-">Subtraction (-)</option>
-            <option value="*">Multiplication (*)</option>
-            <option value="/">Division (/)</option>
-        </select>
-        <br><br>
-        <label for="num2">Second Number</label>
-        <input type="number" id="input2" required>
-        <br><br>
-        <button onclick="calc()" id="submit">Calculate</button>
+<head>
+   <meta charset="UTP-8">
+   <meta name="viewpoint" content="width= device-width ,initial-scale=1.0">
+   <title> calc"> </title>
+   <h2> Simple Calculator</h2>
+   <body>
+      <label> First Number:</label>
+       <input type="number" id="input1" required>
+ 
+        <br> <br>
+     <label for="operation"> operation:</label>
+     <select id="operation">
+          <option value="+">Addition (+)</option>
+          <option value="-">subtraction(-)</option>
+          <option value="*">multiplication(*)</option>
+           <option value="/"> division (/)</option>
+     </select>
+     <br><br>
+     <label> Second Number:</label>
+     <input type=" number" id="input2" required>
+     
+      <br><br>
+      <button onclick="submit()" id="submit">calculate</button>
 
-    <script>
-         function calc() {
+        <script>
+           function submit(){
 
-        let input1 = document.getElementById("input1").value;
-        let input2 = document.getElementById("input2").value;
-        let operation = document.getElementById("operation").value;
-
-        let result;
-        if (operation =="+") { 
-           result = parseInt(input1) + parseInt(input2);
-        }
-        if (operation =="-") { 
-           result = parseInt(input1) - parseInt(input2);
-        }
-        if (operation =="*") { 
-           result = parseInt(input1) * parseInt(input2);
-        }
-        if (operation =="/") { 
-           result = parseInt(input1) / parseInt(input2);
-        }
-        
+             let input1= document.getElementById("input1").value;
+             let input2= document.getElementById("input2").value;
+             let operation= document.getElementById("operation").value;
 
 
-        alert (result);
+             let result;
+             if(operation=="+"){
+              result= parseInt(input1)+ parseInt(input2);
 
-    }
+             }
+             if(operation=="-"){
+              result= parseInt(input1)- parseInt(input2);
+            }
+            if(operation=="*"){
+              result= parseInt(input1)* parseInt(input2);
+            }
+            if(operation=="/"){
+              result= parseInt(input1)/parseInt(input2);
+            }
+            
+                alert(result);
+           }
 
-    function close (){
 
-    }
 
-    </script>
-    </div>
-    </body>
-    </html>
+
+
+        </script>
+
+
+
+
+
+
+
+   </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
