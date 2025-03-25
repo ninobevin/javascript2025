@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <style>
+        .td_pad {
+            padding-inline: 20px;
+        }
+        
+        input,
+        button {
+            width: 100%;
+        }
+    </style>
+    <div>
+        <h3> Objects and Classes
+        </h3>
+        <br>
+        <div style="width: 600px;">
+            <label>Name: </label>
+            <input type="text" id="txt_name">
+            <br>
+            <br>
+            <label>Age: </label>
+            <input type="number" id="txt_age">
+            <br>
+            <br>
+            <label>Section: </label>
+            <input type="text" id="txt_section">
+            <br>
+            <br>
+            <button id="btn_save">Save</button>
+        </div>
+
+
+        <br><br>
+
+        <table border="1">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Section</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td_pad">Mark Money</td>
+                    <td class="td_pad">34</td>
+                    <td class="td_pad">Hope</td>
+
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            const student1 = {
+                name: "Juan Delacruz",
+                age: 16
+            };
+
+            const student2 = {
+                name: "Maria Cruz",
+                age: 15
+            };
+
+            const student3 = {
+                name: "Mark Money",
+                age: 12
+            };
+
+            let students = [student1, student2, student3];
+
+
+
+            students.push({
+                name: "John Lloyd",
+                age: 40
+            });
+
+            //alert(students[3].name);
+        </script>
+
+
+</body>
+
+</html>
