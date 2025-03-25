@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+</head>
+<body>
+        
+  <div>
+    <h3>Distance Converter</h3>
+    
+    <div>
+        <label>Inches To Cm</label>
+        <input id="txt_inches_to_centimeter" type="number" />
+        <button id="btn_inches_to_cm" onclick="inchesToCm()">convert</button>
+       </div>
+         <br>    
+           
+         <div>
+          <label>Inches To feet</label>
+          <input id="txt_inches_to_feet" type="number" />
+          <button id="btn_inches_to_feet" onclick="inchesToFeet()">convert</button>
+       
+         </div>
+<br>
+              
+         <div>
+          <label>Inches To Meters</label>
+          <input id="txt_inches_to_m" type="number" />
+          <button id="btn_inches_to_m" onclick="inchesToMeters()">convert</button>
+       
+         </div>
+          <br>
+         <div>
+          <label>Inches To Kilometers</label>
+          <input id="txt_inches_to_km" type="number" />
+          <button id="btn_inches_to_km" onclick="inchesTokm()">convert</button>
+       
+         </div>
+
+
+
+       <script>
+          // document.getElementById("text1");
+          function inchesToCm() {
+              let inches = document.getElementById("txt_inches_to_centimeter").value;
+              let centimeter = parseFloat(inches) * 2.54;
+              alert(inches + " inches is equal to " + centimeter + " centimeters");
+          }
+          function inchesToFeet() {
+             let inches = document.getElementById("txt_inches_to_feet").value;
+             let feet = parseFloat(inches) / 12;
+             alert(inches + " inches is equal to " + feet + " feet");
+           }
+          function inchesToMeters() {
+            let inches = document.getElementById("txt_inches_to_m").value;
+            let meters = parseFloat(inches) * 0.0254;
+            alert(inches + " inches is equal to " + meters + " meters");
+          }
+          function inchesTokm() {
+            let inches = document.getElementById("txt_inches_to_km").value;
+            let kilometer = parseFloat(inches) / 39370.1;
+            alert(inches + " inches is equal to " + kilometer + " kilometers");
+          }
+          
+       </script>
+        
+      </body>
+   
+</html>
