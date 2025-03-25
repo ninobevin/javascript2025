@@ -8,36 +8,85 @@
 <body>
 
     <div>
-        <h3>Distance Converter</h3>
+        <h3> Distance Converter</h3>
 
-        <div>
-            <label>Meter to Kilometer</label>
-            <input id="txt_m_to_km" type="number" />
-            <button id="btn_m_to_km" onclick="metersToKm()">convert</button>
-
+        <div>       
+        
+            <label>Inches to Cm</label>
+            <input id="txt_inch_to_cm" type="number" />       
+            <button id="btn_inch_to_cm" onclick="inchestocm()">convert</button>
+        
         </div>
-
-        <div>
-            <label>Meter to Kilometer</label>
-            <input id="txt_m_to_km" type="number" />
-            <button id="btn_m_to_km" onclick="metersToKm()">convert</button>
-
-        </div>
-
-    </div>
-
-
-
 
     <script>
-        // document.getElementById("text1");
-        function metersToKm() {
-            let meter = document.getElementById("txt_m_to_km").value;
-            let kilometer = parseFloat(meter / 1000);
-            alert(meter + "m is equal to " + kilometer + "km");
+        //document.getElementById("text1");
+        function inchestocm() {
+            let inches = document.getElementById("txt_inch_to_cm").value;
+            let cm = parseFloat(inches * 10);
+            alert(inches + " inches is equal to " + cm + "cm")
 
         }
     </script>
+     <br>
+        <div>       
+        
+        <label>Inches to Feet</label>
+        <input id="txt_inch_to_feet" type="number" />       
+        <button id="btn_inch_to_feet" onclick="inchestofeet()">convert</button> 
+
+        </div>
+    
+     <script>
+        //document.getElementById("text1");
+        function inchestofeet() {
+            let inches = document.getElementById("txt_inch_to_feet").value;
+            let feet = parseFloat(inches / 10);
+            alert(inches + " inches is equal to " + feet + "feet")
+
+    }
+    </script>
+    <br>
+    <div>       
+        
+        <label>Inches to Meters</label>
+        <input id="txt_inch_to_m" type="number" />       
+        <button id="btn_inch_to_m" onclick="inchestom()">convert</button>
+    
+    </div>
+
+   <script>
+    //document.getElementById("text1");
+    function inchestom() {
+        let inches = document.getElementById("txt_inch_to_m").value;
+        let m = parseFloat(inches * 10);
+        alert(inches + " inches is equal to " + m + "m")
+
+    }
+    </script>
+    <br>
+    <div>       
+        
+        <label>Inches to Kilometers</label>
+        <input id="txt_inch_to_km" type="number" />       
+        <button id="btn_inch_to_km" onclick="inchestokm()">convert</button>
+    
+    </div>
+
+
+</div>
+
+<script>
+    //document.getElementById("text1");
+    function inchestokm() {
+        let inches = document.getElementById("txt_inch_to_km").value;
+        let km = parseFloat(inches * 10);
+        alert(inches + " inches is equal to " + km + "km")
+
+    }
+
+    </script>
 </body>
 
+</body>
 </html>
+        
