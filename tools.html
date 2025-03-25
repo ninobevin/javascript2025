@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 
@@ -40,4 +41,48 @@
     </script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <div>
+        <h3>Distance Converter</h3>
+
+        <div>
+            <label>Meter to Kilometer</label>
+            <input id="txt_m_to_km" type="number" />
+            <button id="btn_m_to_km" onclick="metersToKm()">convert</button>
+
+        </div>
+
+        <div>
+            <label>Meter to Kilometer</label>
+            <input id="txt_m_to_km" type="number" />
+            <button id="btn_m_to_km" onclick="metersToKm()">convert</button>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        // document.getElementById("text1");
+        function metersToKm() {
+            let meter = document.getElementById("txt_m_to_km").value;
+            let kilometer = parseFloat(meter / 1000);
+            alert(meter + "m is equal to " + kilometer + "km");
+
+        }
+    </script>
+</body>
+
+>>>>>>> d986f12a1c7df4a72eb5e62bcf469adb61678eda
 </html>
