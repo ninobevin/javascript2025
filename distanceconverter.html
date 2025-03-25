@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <div>
+        <h3>Distance Converter</h3>
+
+        <div>
+            <label>Inches to Centimeter</label>
+            <input id="txt_i_to_cm" type="number" />
+            <button id="btn_i_to_cm" onclick="iToCm()">convert</button>
+
+        </div>
+        <br>
+        <div>
+            <label>Inches to Feet</label>
+            <input id="txt_i_to_f" type="number" />
+            <button id="btn_i_to_f" onclick="iToF()">convert</button>
+
+        </div>
+        <br>
+        <div>
+            <label>Inches to Meters</label>
+            <input id="txt_i_to_m" type="number" />
+            <button id="btn_i_to_m" onclick="iToM()">convert</button>
+
+        </div>
+        <br>
+        <div>
+            <label>Inches to Kilometer</label>
+            <input id="txt_i_to_km" type="number" />
+            <button id="btn_i_to_km" onclick="iToKm()">convert</button>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        function iToCm() {
+            let inches = document.getElementById("txt_i_to_cm").value;
+            let centimeter = parseFloat(inches * 2.54);
+            alert(inches + "inch is equal to " + centimeter + "cm");
+
+        }
+        function iToF() {
+            let inches1 = document.getElementById("txt_i_to_f").value;
+            let feet = parseFloat(inches1 / 12);
+            alert(inches1 + "inch is equal to " + feet + "feet");
+
+        }
+        function iToM() {
+            let inches2 = document.getElementById("txt_i_to_m").value;
+            let meter = parseFloat(inches2 * 0.0254);
+            alert(inches2 + "inch is equal to " + meter + "m");
+
+        }
+        function iToKm() {
+            let inches3 = document.getElementById("txt_i_to_km").value;
+            let kilometer = parseFloat(inches3 * 0.0000254);
+            alert(inches3 + "inch is equal to " + kilometer + "km");
+
+        }
+    </script>
+</body>
+
+</html>
