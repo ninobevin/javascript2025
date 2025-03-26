@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <style>
+        .td_pad {
+            padding-inline: 20px;
+        }
+        
+        input,button {
+            width: 100%;
+        }
+    </style>
+    <div>
+        <h3> Objects and Classes</h3>
+        <br>
+        <div style="width: 600px;">
+            <label>Name: </label>
+            <input type="text" id="txt_name">
+            <br>
+            <br>
+            <label>Age: </label>
+            <input type="number" id="txt_age">
+            <br>
+            <br>
+            <label>Section: </label>
+            <input type="text" id="txt_section">
+            <br>
+            <br>
+            <button id="btn_save" onclick="addData()">Save</button>
+        </div>
+
+
+        <br><br>
+
+        <table border="1">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Section</th>
+            </thead>
+            <tbody id="tb_data">
+                
+
+            </tbody>
+        </table>
+        <script>
+            let student = [];
+            let tbody = document.getElementById("tb_data");
+
+            function clearTable() {
+                tbody.innerHTML = "";
+            }
+    
+            function loadData() {
+                
+            for (let index in student) {
+                let row = tbody.insertRow();
+                let col_name = row.insertCell(0);
+                let col_age = row.insertCell(1);
+                let col_section = row.insertCell(2);
+
+                col_name.innerHTML = student[index].name;
+                col_age.innerHTML = student[index].age;
+                col_section.innerHTML = student[index].section;
+
+                
+            }
+            }
+            function addData() {
+                clearTable();
+
+                let name = document.getElementById("txt_name").value;
+                let age= document.getElementById("txt_age").value;
+                let section = document.getElementById("txt_section").value;
+                 
+                const newStudent = {
+                    name: name,
+                    age: age,
+                    section: section,
+                };
+
+                student.push(newStudent);
+
+                loadData();
+            }
+                
+            
+        </script>
+
+
+</body>
+
+</html>
