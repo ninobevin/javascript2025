@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   
+    <style>
+           
+    </style>
+
+
+</head>
+<body>
+ 
+    <form id="myform">
+        <label for="name">Name</label><br>
+        <input type="text" id="name"><br>
+
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" number="age"><br>
+
+        <label for="section">Section</label><br>
+        <input type="text" id="section"><br><br>
+
+        <input type="submit" value="Submit">
+</form>
+    <br><br>
+    <h4>Students</h4>
+     <table border="1" id="dataTable">
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th>Age</th>
+                <th>Section</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><Slot></Slot>Sandy</td>
+                <td>16</td>
+                <td>Courage</td>
+                <tr>
+                <br>
+                <td>Nicole</td>
+                <td>16</td>
+                <td>Courage</td>
+                </tr>
+                <br>
+                <td>Edrian</td>
+                <td>16</td>
+                <td>Courage</td>
+                <tr>
+                <br>
+                <td>Ellaine</td>
+                <td>16</td>
+                <td>Courage</td>
+                </tr>
+                <br>
+                <td>Monic</td>
+                <td>16</td>
+                <td>Courage</td>
+            </tr>
+        </tbody>
+     </table>
+
+
+     <script>
+        document.getElementById("myform").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+    
+        
+        let name = document.getElementById("name").value.trim();
+        let age = document.getElementById("age").value.trim();
+        let section = document.getElementById("section").value.trim();
+        
+    
+        
+        let tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+    
+        
+        let newRow = tableBody.insertRow();
+    
+        let cell1 = newRow.insertCell(0);
+        let cell2 = newRow.insertCell(1);
+        let cell3 = newRow.insertCell(2);
+    
+       
+        cell1.textContent = name;
+        cell2.textContent = age;
+        cell3.textContent = section;
+    
+        
+        document.getElementById("myForm").reset();
+        
+    });
+       </script>
+    </body>
+    </html>
