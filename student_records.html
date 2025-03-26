@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Student Records
+        </title>
+        <style>
+            input {
+                width: 300px;
+                height: 20px;
+                font-size: 16px;
+            }
+
+            button{
+                width: 70px;
+                height: 20px;
+                font-size: 12px;
+            }
+
+            table{
+                width: 300px;
+                height: 20px;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+        <body>
+            <div>
+                <h3>Student Records</h3>
+
+                <br>
+
+                <div>
+                    <label> Name:</label>
+                    <input text="text" id="txt_name">
+                    <br><br>
+                    <label> Age:</label>
+                    <input type="number" id="txt_age">
+                    <br><br>
+                    <label> Section:</label>
+                    <input text="text" id="txt_section">
+                    <br><br>
+                    <button id="btn_save" onclick = "addData()" >Save</button>
+                   <br><br> 
+                </div>
+                <table border="1">
+                    <thead>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Section</th>
+                    </thead>
+                    <tbody id="tb_data">
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                let students = [];
+                let tbody = document.getElementById("tb_data");
+
+                function clearTable(){
+                    tbody.innerHTML = "";
+                }
+
+                function loadData(){
+
+                    for(index in students){
+                        let row = tbody.insertRow(index);
+                        let col_name = row.insertCell(0);
+                        let col_age = row.insertCell(1);
+                        let col_section = row.insertCell(2);
+
+                        col_name.innerHTML = students[index].name;
+                        col_age.innerHTML = students[index].age;
+                        col_section.innerHTML = students[index].section;
+                    }
+                }
+
+                function addData(){
+                    clearTable();
+
+                    let name = document.getElementById("txt_name").value;
+                    let age = document.getElementById("txt_age").value;
+                    let section = document.getElementById("txt_section").value;
+
+                    const student = { 
+                        name: name,
+                        age: age,
+                        section: section
+                    };
+
+                    students.push(student);
+
+                    loadData();
+                    
+                }
+              
+            </script>
+        </body>
+        </html>
