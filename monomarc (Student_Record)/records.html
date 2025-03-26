@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td, th{
+            padding: 10px;
+        }
+        .dt #table{
+            display: flex;
+            justify-content: center;
+        }
+        #submit{
+            display: flex;
+            justify-self: center;
+        }
+        
+        /*form config css*/
+        .dt #form1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+        #form1 input{
+            width: 4in;
+        }
+
+
+    </style>
+</head>
+<body class="dt">
+
+    <div id="form1">
+        <form id="crdtlsform">
+            <label for="fullname">Name:</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Fullname" required><br><br>
+
+            <label for="Age">Age:</label><br>
+            <input type="text" id="Age" name="Age" placeholder="Your Age" required><br><br>
+
+            <label for="section">Section:</label><br>
+            <input type="text" id="section" name="section" placeholder="Your section" required><BR></BR>
+
+            <button type="submit" id="submit" value="submit">SUBMIT</button>
+
+        </form>
+    </div>
+
+
+    <div id="table">
+        <table id="datatable" border="1px"> 
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>SECTION</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    
+                </tr>
+
+            </tbody>
+        </table>
+
+        <script>
+            
+            
+            document.getElementById("crdtlsform").addEventListener("submit", function(event){
+        event.preventDefault();
+                
+        let fname = document.getElementById("fname").value.trim();
+        let Age = document.getElementById("Age").value.trim();
+        let section = document.getElementById("section").value.trim();
+        
+        let tablebody = document.getElementById("datatable").getElementsByTagName("tbody")[0];
+
+        let newrow = tablebody.insertRow();
+
+        let cell1 = newrow.insertCell(0);
+        let cell2 = newrow.insertCell(1);
+        let cell3 = newrow.insertCell(2);
+
+        cell1.textContent = fname;
+        cell2.textContent = Age;
+        cell3.textContent = section;
+
+        document.getElementbyId("crdtlsform").reset();
+    });
+
+        </script>
+    </div>
+    
+</body>
+</html>
